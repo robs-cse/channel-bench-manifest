@@ -16,9 +16,6 @@
   <remote fetch="../sel4proj" name="sel4proj"/>
   <remote fetch="https://github.com/nanopb" name="nanopb" />
 
-  <!-- This project is temporarily hosted under ~cmillar on bitbucket -->
-  <remote fetch="../~cmillar" name="timing"/>
-
   <!-- Kernel -->
   <project name="seL4.git" path="kernel"/>
 
@@ -38,7 +35,7 @@
   <project name="sel4_projects_libs" path="projects/sel4_projects_libs" remote="sel4proj" />
 
   <!-- Primary project for this manifest -->
-  <project remote="timing" name="channel_bench.git" path="projects/channel_bench">
+  <project remote="sel4proj" name="channel-bench.git" path="projects/channel-bench">
     <!-- Project-specific settings -->
     <linkfile src="easy-settings.cmake" dest="easy-settings.cmake"/>
   </project>
