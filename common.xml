@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright 2019, Data61
+     Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+     ABN 41 687 119 230.
+
+     This software may be distributed and modified according to the terms of
+     the BSD 2-Clause license. Note that NO WARRANTY is provided.
+     See "LICENSE_BSD2.txt" for details.
+
+     @TAG(DATA61_BSD)
+-->
+<manifest>
+  <!-- Remote repository collections -->
+  <remote fetch="../seL4" name="seL4" />
+  <remote fetch="../sel4proj" name="sel4proj"/>
+  <remote fetch="https://github.com/nanopb" name="nanopb" />
+
+  <!-- This project is temporarily hosted under ~cmillar on bitbucket -->
+  <remote fetch="../~cmillar" name="timing"/>
+
+  <!-- Kernel -->
+  <project name="seL4.git" path="kernel"/>
+
+  <!-- Build system and build tools -->
+  <project name="seL4_tools.git" path="tools/seL4">
+    <linkfile src="cmake-tool/init-build.sh" dest="init-build.sh"/>
+    <linkfile src="cmake-tool/griddle" dest="griddle"/>
+  </project>
+
+  <!-- C runtime -->
+  <project name="sel4runtime.git" remote="sel4proj" path="projects/sel4runtime"/>
+  <project name="musllibc.git" path="projects/musllibc" revision="sel4"/>
+
+  <!-- Shared libraries for seL4 & sel4proj projects -->
+  <project name="seL4_libs.git" path="projects/seL4_libs"/>
+  <project name="util_libs.git" path="projects/util_libs"/>
+  <project name="sel4_projects_libs" path="projects/sel4_projects_libs" remote="sel4proj" />
+
+  <!-- Primary project for this manifest -->
+  <project remote="timing" name="channel_bench.git" path="projects/channel_bench">
+    <!-- Project-specific settings -->
+    <linkfile src="easy-settings.cmake" dest="easy-settings.cmake"/>
+  </project>
+
+  <!-- External dependencies -->
+  <project name="riscv-pk" remote="sel4proj" revision="fix-32bit" path="tools/riscv-pk"/>
+  <project
+    name="nanopb"
+    path="nanopb"
+    revision="847ac296b50936a8b13d1434080cef8edeba621c"
+    upstream="master"
+    remote="nanopb"
+  />
+</manifest>
