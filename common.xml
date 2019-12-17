@@ -44,7 +44,7 @@
   <project name="riscv-pk" remote="sel4proj" revision="fix-32bit" path="tools/riscv-pk"/>
   <project
     name="nanopb"
-    path="nanopb"
+    path="tools/nanopb"
     revision="847ac296b50936a8b13d1434080cef8edeba621c"
     upstream="master"
     remote="nanopb"
