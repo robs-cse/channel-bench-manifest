@@ -32,6 +32,7 @@
   <!-- Shared libraries for seL4 & sel4proj projects -->
   <project name="seL4_libs.git" path="projects/seL4_libs"/>
   <project name="util_libs.git" path="projects/util_libs"/>
+  <project name="sel4bench.git" path="projects/sel4bench"/>
   <project name="sel4_projects_libs" path="projects/sel4_projects_libs" remote="sel4proj" />
 
   <!-- Primary project for this manifest -->
