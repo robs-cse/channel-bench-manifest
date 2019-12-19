@@ -11,9 +11,11 @@
      @TAG(DATA61_BSD)
 -->
 <manifest>
-  <!-- Use the 'master' branch/tag for all repositories by default -->
-  <default revision="timing" remote="seL4" />
-
   <!-- include all the common repositories, we just want to define the kernel -->
-  <include name="common.xml"/>
+  <include name="master.xml"/>
+
+  <!-- Using timing branches when necessary -->
+  <extend-project name="seL4_libs.git" remote="timing"/>
+  <extend-project name="sel4bench.git" remote="timing"/>
+  <extend-project name="channel-bench.git" remote="timing"/>
 </manifest>
