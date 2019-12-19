@@ -13,7 +13,9 @@ channel-bench-manifest
 ======================
 
 This is the manifest for the timing channel benchmarking tool. Please
-see the [sel4proj/channel-bench](../channel-bench) repository.
+see the
+[sel4proj/channel-bench](https://github.com/SEL4PROJ/channel-bench)
+repository.
 
 To initialise this project using `repo`, use the following command (not
 that the `timing.xml` manifest is chosen, this ensures that the
