@@ -12,9 +12,10 @@
 -->
 <manifest>
   <!-- Remote repository collections -->
-  <remote fetch="../seL4" name="seL4" />
-  <remote fetch="../sel4proj" name="sel4proj"/>
+  <remote fetch="https://github.com/seL4" name="seL4" />
+  <remote fetch="https://github.com/sel4proj" name="sel4proj"/>
   <remote fetch="https://github.com/nanopb" name="nanopb" />
+  <remote fetch="https://github.com/riscv" name="opensbi"/>
 
   <!-- Kernel -->
   <project name="seL4.git" path="kernel"/>
@@ -43,12 +44,6 @@
   </project>
 
   <!-- External dependencies -->
-  <project name="riscv-pk" remote="sel4proj" revision="fix-32bit" path="tools/riscv-pk"/>
-  <project
-    name="nanopb"
-    path="tools/nanopb"
-    revision="847ac296b50936a8b13d1434080cef8edeba621c"
-    upstream="master"
-    remote="nanopb"
-  />
+  <project name="opensbi" remote="opensbi" revision="refs/tags/v0.8" path="tools/opensbi"/>
+  <project name="nanopb" path="tools/nanopb" revision="refs/tags/0.4.3" upstream="master" remote="nanopb"/>
 </manifest>
